@@ -10,12 +10,11 @@ let package = Package(
     products: [
         .library(
             name: "OpenGlass",
-            targets: ["OpenGlass"],
+            targets: ["OpenGlass"]
         ),
     ],
     targets: [
-        .target(
-            name: "OpenGlass",
-        ),
-    ],
+        .target(name: "OGCapture", publicHeadersPath: "include"),
+        .target(name: "OpenGlass", dependencies: ["OGCapture"]),
+    ]
 )
